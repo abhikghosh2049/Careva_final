@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare App - Full Screen</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="login-container">
+
+        <div class="splash-panel">
+            <div class="logo">
+                <div class="logo-v"></div>
+                <div class="logo-circle"></div>
+            </div>
+            <h1>CAREVA</h1>
+            <p>All your healthcare need on your finger tips</p>
+        </div>
+
+        <div class="login-panel">
+
+            <div class="login-content form-content" id="login-view">
+                <div class="logo"> <div class="logo-v"></div>
+                    <div class="logo-circle"></div>
+                </div>
+                <h2>Welcome User</h2>
+                <p class="subtitle">Sign in to continue</p>
+
+                <form id="login-form">
+                    <div class="input-group">
+                        <label>EMAIL</label>
+                        <input type="email" id="login-email-input" />
+                    </div>
+                    <div class="input-group">
+                        <label>PASSWORD</label>
+                        <input type="password" id="login-password-input" />
+                    </div>
+                    <a href="#" class="forgot-password">Forget Password?</a>
+                    <button type="submit" class="btn-action">SIGN IN</button>
+                </form>
+                <a href="#" class="toggle-link" id="show-signup-link">Need an account? Sign Up</a>
+            </div>
+
+            <div class="signup-content form-content" id="signup-view" style="display: none;">
+                 <div class="logo"> <div class="logo-v"></div>
+                    <div class="logo-circle"></div>
+                </div>
+                <h2>Create Account</h2>
+                <p class="subtitle">Enter your details below</p>
+
+                <form id="signup-form">
+                    <div class="input-group">
+                        <label>NAME</label>
+                        <input type="text" id="signup-name-input" />
+                    </div>
+                    <div class="input-group">
+                        <label>EMAIL</label>
+                        <input type="email" id="signup-email-input" />
+                    </div>
+                    <div class="input-group">
+                        <label>PASSWORD</label>
+                        <input type="password" id="signup-password-input" />
+                    </div>
+                     <div class="input-group">
+                        <label>CONFIRM PASSWORD</label>
+                        <input type="password" id="signup-confirm-password-input" />
+                    </div>
+                    <button type="submit" class="btn-action">SIGN UP</button>
+                </form>
+                 <a href="#" class="toggle-link" id="show-login-link">Already have an account? Sign In</a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore-compat.js"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>

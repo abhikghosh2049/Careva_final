@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careva Healthcare</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Careva AI Doctor & Therapist</h1>
+            <p>Your personal health and wellness companion</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-link active" onclick="openTab(event, 'doctor')"><i class="fas fa-user-doctor"></i> AI Doctor</button>
+            <button class="tab-link" onclick="openTab(event, 'therapist')"><i class="fas fa-brain"></i> AI Therapist</button>
+        </div>
+
+        <main>
+            <div id="doctor" class="tab-content" style="display: block;">
+                <div class="form-container">
+                    <h3>General & Vision Health</h3>
+                    <form id="doctor-form">
+                        <input type="hidden" name="agent_type" value="doctor">
+
+                        <div class="input-group">
+                            <label for="doctor-text"><i class="fas fa-comment-medical"></i> Describe your symptoms</label>
+                            <textarea id="doctor-text" name="message" rows="4" placeholder="e.g., I have a headache and a slight fever..."></textarea>
+                        </div>
+
+                        <div class="file-inputs">
+                            <div class="input-group">
+                                <label for="doctor-audio" class="file-label"><i class="fas fa-microphone-lines"></i> Record or Upload Voice Note</label>
+                                <input type="file" id="doctor-audio" name="audio_file" accept="audio/*">
+                            </div>
+                            <div class="input-group">
+                                <label for="doctor-image" class="file-label"><i class="fas fa-camera"></i> Upload Image for Analysis</label>
+                                <input type="file" id="doctor-image" name="image_file" accept="image/*">
+                            </div>
+                        </div>
+
+                        <button type="submit">Consult AI Doctor</button>
+                    </form>
+                </div>
+                <div class="response-container">
+                    <h3>Doctor's Analysis</h3>
+                    <div id="doctor-response-text" class="response-text">Your results will appear here.</div>
+                    <audio id="doctor-response-audio" controls></audio>
+                </div>
+            </div>
+
+            <div id="therapist" class="tab-content">
+                 <h3>Mental Health Support</h3>
+                <div id="therapist-chat-window" class="chat-window">
+                    <div class="chat-message bot-message">
+                        <p>Hello! What's on your mind today?</p>
+                    </div>
+                </div>
+                 <form id="therapist-form">
+                    <input type="hidden" name="agent_type" value="therapist">
+                     <div class="input-area">
+                        <textarea id="therapist-text" name="message" placeholder="Type your message here..."></textarea>
+                        <input type="file" id="therapist-audio" name="audio_file" accept="audio/*" style="display: none;">
+                        <label for="therapist-audio" class="icon-button"><i class="fas fa-microphone"></i></label>
+                        <button type="submit" class="icon-button"><i class="fas fa-paper-plane"></i></button>
+                    </div>
+                </form>
+                 <div class="response-area">
+                    <h3>Last Response Audio</h3>
+                    <audio id="therapist-response-audio" controls></audio>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

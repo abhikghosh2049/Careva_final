@@ -1,0 +1,358 @@
+/* --- Global Styles --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5; /* Fallback background */
+    position: relative; /* Needed for positioning body pseudo-elements */
+    overflow: hidden; /* Prevent scrollbars from body shapes */
+    min-height: 100vh;
+}
+
+/* --- Decorative Body Shapes (MUCH More Visible) --- */
+body::before {
+    content: '';
+    position: absolute;
+    top: -15vh; /* Adjusted position slightly */
+    left: -20vw; /* Adjusted position slightly */
+    width: 50vw;  /* Slightly larger */
+    height: 50vw; /* Slightly larger */
+    /* Increased alpha values significantly */
+    background: linear-gradient(135deg, rgba(160, 158, 255, 0.6), rgba(127, 125, 250, 0.4));
+    border-radius: 45% 55% 60% 40% / 50% 40% 60% 50%; /* Blob shape */
+    transform: rotate(-30deg);
+    z-index: 0;
+    opacity: 1; /* Make fully opaque relative to its color */
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    bottom: -20vh; /* Adjusted position slightly */
+    right: -15vw;  /* Adjusted position slightly */
+    width: 45vw;   /* Slightly larger */
+    height: 45vw;  /* Slightly larger */
+     /* Increased alpha values significantly */
+    background: linear-gradient(45deg, rgba(238, 240, 255, 0.8), rgba(220, 225, 255, 0.6));
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 1; /* Make fully opaque relative to its color */
+}
+
+
+/* --- Logo (Shared) --- */
+.logo {
+    width: 80px;
+    height: 60px;
+    position: relative;
+    margin: 0 auto;
+    z-index: 5; /* Ensure logo is above panel shapes */
+}
+
+.logo-v {
+    width: 100%;
+    height: 100%;
+    border-radius: 0 0 40px 40px;
+}
+
+.logo-circle {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* --- Main Login Container (Mobile-First) --- */
+.login-container {
+    width: 100%;
+    max-width: 400px; /* Mobile screen width */
+    min-height: 100vh;
+    background: #fff;
+    position: relative; /* Keeps content context */
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 2; /* Above body shapes */
+}
+
+/* --- 1. Splash Panel --- */
+.splash-panel {
+    display: none; /* Hidden on mobile */
+    background: linear-gradient(170deg, #a09eff, #8f8dfc); /* Slightly deeper gradient */
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+    position: relative; /* For pseudo-elements */
+    overflow: hidden; /* Contain pseudo-elements */
+    z-index: 3; /* Above body shapes */
+}
+
+/* Splash panel specific logo colors */
+.splash-panel .logo-v {
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.6));
+}
+.splash-panel .logo-circle {
+    background: #fff;
+}
+
+.splash-panel h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin: 25px 0 10px;
+    position: relative; z-index: 5; /* Above shapes */
+}
+
+.splash-panel p {
+    font-size: 1rem;
+    font-weight: 400;
+    opacity: 0.9;
+    position: relative; z-index: 5; /* Above shapes */
+}
+
+/* Additional shapes for Splash Panel (More Visible) */
+.splash-panel::before {
+    content: '';
+    position: absolute;
+    bottom: -50px;
+    left: -50px;
+    width: 200px;
+    height: 200px;
+     /* Increased alpha value */
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 30px;
+    transform: rotate(45deg);
+    z-index: 1;
+}
+.splash-panel::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    right: -80px;
+    width: 150px;
+    height: 150px;
+     /* Increased alpha value */
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    z-index: 1;
+}
+
+
+/* --- 2. Login/Signup Panel --- */
+.login-panel {
+    width: 100%;
+    min-height: 100%;
+    padding: 40px 30px;
+    position: relative;
+    background-color: #fff; /* Ensure white background */
+    z-index: 3; /* Above body shapes */
+    overflow: hidden; /* Hide overflow from internal shapes */
+}
+
+/* Existing decorative shapes for login panel (These use solid colors, made slightly darker) */
+.login-panel::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 120px;
+    height: 120px;
+    background: #dde0ff; /* Slightly darker shade for visibility */
+    border-radius: 20px;
+    transform: rotate(45deg);
+    z-index: 1;
+}
+ .login-panel::after {
+    content: '';
+    position: absolute;
+    top: 70px;
+    left: -20px;
+    width: 60px;
+    height: 60px;
+    background: #f0f2ff; /* Slightly darker shade for visibility */
+    border-radius: 15px;
+    transform: rotate(30deg);
+     z-index: 1;
+}
+
+/* --- Content Containers --- */
+.login-content, .signup-content {
+    position: relative;
+    z-index: 10; /* Above panel shapes */
+}
+
+ /* --- Shapes within Content Areas --- */
+/* Shapes for Login Content */
+.login-content::before {
+    content: '';
+    position: absolute;
+    bottom: 5%;
+    left: -30px;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(45deg, rgba(220, 220, 255, 0.7), rgba(200, 200, 255, 0.5)); /* Light purple gradient */
+    border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%; /* Blobby circle */
+    transform: rotate(15deg);
+    z-index: -1; /* Behind the form elements */
+}
+
+.login-content::after {
+     content: '';
+    position: absolute;
+    top: 10%;
+    right: -25px;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(230, 230, 255, 0.6); /* Lighter solid purple */
+    border-radius: 10px;
+    transform: rotate(-25deg);
+    z-index: -1; /* Behind the form elements */
+}
+
+ /* Shapes for Signup Content */
+.signup-content::before {
+    content: '';
+    position: absolute;
+    top: 5%;
+    left: -35px;
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(-45deg, rgba(210, 210, 255, 0.7), rgba(190, 190, 255, 0.5)); /* Light purple gradient */
+    border-radius: 30% 70% 50% 50% / 40% 60% 40% 60%; /* Different Blobby circle */
+    transform: rotate(-10deg);
+    z-index: -1; /* Behind the form elements */
+}
+
+.signup-content::after {
+     content: '';
+    position: absolute;
+    bottom: 15%;
+    right: -20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(235, 235, 255, 0.6); /* Lighter solid purple */
+    border-radius: 50%; /* Circle */
+     transform: rotate(30deg);
+    z-index: -1; /* Behind the form elements */
+}
+
+
+/* Logo specific styles */
+.form-content .logo {
+    margin-top: 30px;
+}
+.form-content .logo-v {
+    background: linear-gradient(135deg, #a09eff, #7f7dfa);
+}
+.form-content .logo-circle {
+    background: #fff;
+    border: 4px solid #fff;
+}
+
+.form-content h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+    margin-top: 25px;
+    position: relative; z-index: 2; /* Ensure headings are above shapes */
+}
+.form-content .subtitle {
+    font-size: 1rem;
+    color: #aaa;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative; z-index: 2; /* Ensure subtitles are above shapes */
+}
+
+/* Form Styles */
+.input-group { margin-bottom: 20px; }
+.input-group label {
+    display: block; font-size: 0.7rem; color: #aaa; font-weight: 600;
+    margin-bottom: 8px; letter-spacing: 0.5px;
+    position: relative; z-index: 2;
+}
+.input-group input {
+    width: 100%; border: none; border-bottom: 1px solid #eee;
+    padding: 10px 0; font-size: 1rem; font-family: 'Poppins', sans-serif;
+    outline: none; background-color: transparent; /* Ensure input bg is transparent */
+    position: relative; /* Needed to ensure input text is above pseudo-elements */
+    z-index: 2;
+}
+.input-group input:focus { border-bottom-color: #7f7dfa; }
+
+.forgot-password {
+    display: block; text-align: right; font-size: 0.8rem;
+    color: #a09eff; text-decoration: none; margin-bottom: 30px;
+    position: relative; z-index: 2;
+}
+.toggle-link {
+    display: block; text-align: center; margin-top: 25px;
+    font-size: 0.9rem; color: #7f7dfa; cursor: pointer; text-decoration: none;
+     position: relative; z-index: 2;
+}
+.toggle-link:hover { text-decoration: underline; }
+
+.btn-action {
+    width: 100%; padding: 14px; border: none; border-radius: 25px;
+    background: linear-gradient(90deg, #a09eff, #7f7dfa);
+    color: #fff; font-size: 1rem; font-weight: 600; cursor: pointer;
+    box-shadow: 0 5px 15px rgba(127, 125, 250, 0.4);
+    transition: all 0.3s ease; margin-top: 10px;
+     position: relative; z-index: 2;
+}
+.btn-action:hover { box-shadow: 0 8px 20px rgba(127, 125, 250, 0.6); }
+
+/* --- DESKTOP - FULL SCREEN STYLES --- */
+@media (min-width: 992px) {
+    .login-container {
+        display: flex;
+        width: 100vw; /* Full viewport width */
+        height: 100vh; /* Full viewport height */
+        max-width: none; /* Override mobile max-width */
+        min-height: auto; /* Override mobile min-height */
+        border-radius: 0; /* No rounded corners */
+        box-shadow: none; /* No shadow */
+        overflow: hidden; /* Hide overflow */
+    }
+
+    .splash-panel {
+        display: flex; /* Show splash panel */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 50%; /* Take half the screen */
+        height: 100%;
+    }
+
+    .login-panel {
+        width: 50%; /* Take the other half */
+        height: 100%; /* Full height */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow-y: auto; /* Allow scrolling if content overflows */
+        padding: 40px 5%; /* Adjust padding for desktop */
+    }
+
+    .login-content, .signup-content {
+        width: 100%;
+        max-width: 380px; /* Slightly wider form on desktop */
+    }
+
+    /* Hide the form logo on desktop, use splash panel logo */
+    .form-content .logo {
+        display: none;
+    }
+
+    .form-content h2 {
+        margin-top: 0;
+    }
+}
