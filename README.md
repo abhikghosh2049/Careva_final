@@ -57,6 +57,11 @@ It combines medical intelligence, natural conversation, and transparent data val
 
 
 ---
+## SmartContract Code
+
+https://remix.ethereum.org/#lang=en&optimize=false&runs=200&evmVersion=null&version=soljson-v0.8.30+commit.73712a01.js 
+
+---
 
 ## 🎥 Demo Video  
 
@@ -111,4 +116,5 @@ python app.py
 ### 💬 Want to collaborate?
 Let’s build the future of secure AI healthcare together.  
 📧 Email: teamcareva@gmail.com  
+
 
