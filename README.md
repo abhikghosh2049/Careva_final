@@ -48,6 +48,10 @@ It combines medical intelligence, natural conversation, and transparent data val
 ## 📸 Screenshot  
 
 <img width="1919" height="966" alt="image" src="https://github.com/user-attachments/assets/c947cd99-3d8b-4d19-ae81-7df13012bb67" />
+--- 
+
+![WhatsApp Image 2025-10-26 at 12 37 14_f3958abf](https://github.com/user-attachments/assets/4b3528c5-1b87-4d6d-a590-efcc59c367c2)
+
 ---
 <img width="1918" height="922" alt="image" src="https://github.com/user-attachments/assets/341b5e2b-7e62-48af-8cff-efeea763e7ce" />
 ---
@@ -116,6 +120,7 @@ python app.py
 ### 💬 Want to collaborate?
 Let’s build the future of secure AI healthcare together.  
 📧 Email: teamcareva@gmail.com  
+
 
 
 
