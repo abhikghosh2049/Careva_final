@@ -102,7 +102,7 @@ python app.py
 | Name | Role | GitHub |
 |------|------|--------|
 | Abhik Ghosh | Lead Developer | [@abhikghosh2049](https://github.com/abhikghosh2049) |
-| Rajesh Dinda | AI + Blockchain Engineer | [@raj-dip]([(https://github.com/Rajesh-007-dl)) |
+| Rajesh Dinda | AI + Blockchain Engineer | [@Rajesh-007-dl](https://github.com/Rajesh-007-dl) |
 
 ---
 
@@ -116,5 +116,6 @@ python app.py
 ### 💬 Want to collaborate?
 Let’s build the future of secure AI healthcare together.  
 📧 Email: teamcareva@gmail.com  
+
 
 
