@@ -69,9 +69,10 @@ https://remix.ethereum.org/#lang=en&optimize=false&runs=200&evmVersion=null&vers
 
 ## 🎥 Demo Video  
 
-> _Record and upload your demo video showcasing your AI features_  
 
-[![Watch the Demo](./careva_demo.mp4)](./careva_demo.mp4)  
+
+https://github.com/user-attachments/assets/6966df47-c1dc-4454-afc2-1609e7a5a039
+
 
 ---
 
@@ -120,6 +121,7 @@ python app.py
 ### 💬 Want to collaborate?
 Let’s build the future of secure AI healthcare together.  
 📧 Email: teamcareva@gmail.com  
+
 
 
 
