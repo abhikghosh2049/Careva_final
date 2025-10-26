@@ -1,33 +1,29 @@
 import React, { useState } from 'react';
 import './App.css';
 
-// --- THIS IS THE FIX ---
-// Import all icons from 'fa6' and include FaRightFromBracket
-import { FaUserDoctor, FaBrain, FaRightFromBracket } from 'react-icons/fa6'; 
-// --- END FIX ---
-
+// Remove FaHeadset if not used elsewhere, or keep if needed
+import { FaUserDoctor, FaBrain, FaRightFromBracket, FaHeadset } from 'react-icons/fa6'; 
 import DoctorTab from './components/DoctorTab';
 import TherapistTab from './components/TherapistTab';
 import LandingPage from './components/LandingPage';
+import SupportChatbot from './components/SupportChatbot'; // Keep this import
 
-// --- IMPORTS FOR AUTH ---
 import { useAuth } from './context/AuthContext'; 
 import { useNavigate } from 'react-router-dom'; 
 
 function App() {
-  const [activeTab, setActiveTab] = useState('doctor');
+  const [activeTab, setActiveTab] = useState('doctor'); 
   const [showLandingPage, setShowLandingPage] = useState(true);
-  
-  // --- HOOKS FOR AUTH ---
+  const [showSupportChat, setShowSupportChat] = useState(false); // <-- NEW State
+
   const { logout } = useAuth(); 
   const navigate = useNavigate(); 
 
   const handleEnterApp = (mode) => {
-    setActiveTab(mode);
+    setActiveTab(mode); 
     setShowLandingPage(false);
   };
 
-  // --- LOGOUT HANDLER ---
   const handleLogout = async () => {
     try {
       await logout();
@@ -49,6 +45,7 @@ function App() {
           <p>Your personal health and wellness companion</p>
         </header>
 
+        {/* --- REMOVED 'support-active' logic --- */}
         <nav className={`tabs ${activeTab}-active`}>
           <button
             className={`tab-link ${activeTab === 'doctor' ? 'active' : ''}`}
@@ -62,21 +59,42 @@ function App() {
           >
             <FaBrain /> AI Therapist
           </button>
+          {/* --- REMOVED Support Chat Button --- */}
         </nav>
+        
+        <div style={{ marginTop: 'auto', padding: '1em 0' }}>
+          <w3m-button />
+        </div>
 
-        {/* --- ADD LOGOUT BUTTON WITH CORRECT ICON --- */}
         <button 
           className="tab-link logout-button" 
           onClick={handleLogout}
-          style={{ marginTop: 'auto', background: '#fce4ec' }} // Quick inline style
+          style={{ background: '#fce4ec' }} 
         >
           <FaRightFromBracket /> Logout
         </button>
       </div>
 
       <main className="app-content">
+        {/* --- Render main tabs --- */}
         {activeTab === 'doctor' && <DoctorTab />}
         {activeTab === 'therapist' && <TherapistTab />}
+
+        {/* --- NEW: Floating Action Button (FAB) to toggle chatbot --- */}
+        <button 
+          className="support-fab" 
+          onClick={() => setShowSupportChat(prev => !prev)}
+          title={showSupportChat ? "Close Support Chat" : "Open Support Chat"}
+        >
+          <FaHeadset size={24} />
+        </button>
+
+        {/* --- NEW: Conditionally Render Support Chatbot --- */}
+        {showSupportChat && (
+          <div className="support-chatbot-overlay">
+            <SupportChatbot onClose={() => setShowSupportChat(false)} />
+          </div>
+        )}
       </main>
     </div>
   );
